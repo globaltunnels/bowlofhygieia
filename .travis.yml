@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "0.8"
-before_install: npm install -g grunt-cli
-install: npm install
+  - "0.12.5"
+before_install: npm install -g bower grunt-cli
+install: bower install
 before_script: grunt build
