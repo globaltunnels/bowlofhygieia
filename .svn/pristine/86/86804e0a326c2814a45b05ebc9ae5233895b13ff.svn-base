@@ -1,0 +1,65 @@
+<script type="text/ng-template" id="aboutModalContent.html">
+      <div>  
+        <div class="modal-header">
+            <h3 class="modal-title">About the ADS Prototype App</h3>
+        </div>
+        <div class="modal-body">
+            The web site is for a patient to search and match the drug side effects.  
+            The patient can search drug based on the name, and find the detail information 
+            of this drug from live FDA FEARS system.  If the result is found,  
+            the site will display all side effect based on serious level.  If any symptom is 
+            matched and found, the patient is able to submit his/her report from MedWatch.
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="close()">close</button>
+        </div>
+      </div>
+    </script>
+<div class='row'>
+    <div class="col-md-3 text-right"><img src="images/logo.png" width="50" height="50"/>
+    </div>
+        <div class="col-md-4">
+            <div class="input-group" style="margin-top: 10px;">
+                <input type="text" ng-model="selected" placeholder="Type in Drug Name"
+                       typeahead="drug for drug in drugList | filter:$viewValue | limitTo:8"
+                       typeahead-on-select="onSelect($item, $model, $label)" class="form-control">
+                <span class="input-group-btn">
+                    <button title="Search the drug" alt="Search the drug" class="btn" ng-click="onClick()">
+                        <i class="icon-search pointer"></i>Go</button>
+                </span>
+            </div>
+        </div>
+    <div class="col-md-1" style="padding:20px;">    <a ng-click="open()">About</a></div>
+    <div class="col-md-3" style="padding:3px;"><a href="http://www.fda.gov/Safety/MedWatch/">
+         Report A Problem to<img src="https://www.accessdata.fda.gov/scripts/medwatch/images/mw_logo_ani_160px.gif"></a></div>
+</div>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+        <div ng-show="labelNotFound">
+            <h3 style="text-align: center;">{{labelNotFound}}</h3>
+        </div>
+        <div ng-show="!labelNotFound && (openFdaLabel || drugLabel)">
+            <h3 style="text-align: center;"> Drug Labeling Information</h3>
+        <div ng-show="openFdaLabel">
+            <h4>Open FDA Drug Information</h4>
+            <dl class="dl-horizontal" ng-repeat="(key, val) in openFdaLabel" >
+                <dt>{{key}}</dt>
+                <dd>{{formatLabel(val)}}</dd>
+            </dl>
+        </div>
+        <div ng-show="drugLabel">
+            <h4 >Other Information</h4>
+            <dl class="dl-horizontal" ng-repeat="(key, val) in drugLabel" >
+                <dt>{{key}}</dt>
+                <dd>{{formatLabel(val)}}</dd>
+            </dl>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <nvd3 options="chartOptions" data="chartData" config="chartConfig"></nvd3>
+    </div>
+    <div class="col-md-1"></div>
+   
+</div>
