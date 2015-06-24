@@ -16,7 +16,7 @@
       </div>
     </script>
 <div class='row'>
-    <div class="col-md-4 text-right"><img src="/images/logo.png" width="50" height="50"/>
+    <div class="col-md-3 text-right"><img src="images/logo.png" width="50" height="50"/>
     </div>
         <div class="col-md-4">
             <div class="input-group" style="margin-top: 10px;">
@@ -29,13 +29,18 @@
                 </span>
             </div>
         </div>
-    <div class="col-md-4" style="padding:20px;">    <a ng-click="open()">About</a></div>
+    <div class="col-md-1" style="padding:20px;">    <a ng-click="open()">About</a></div>
+    <div class="col-md-3" style="padding:3px;"><a href="http://www.fda.gov/Safety/MedWatch/">
+         Report A Problem to<img src="https://www.accessdata.fda.gov/scripts/medwatch/images/mw_logo_ani_160px.gif"></a></div>
 </div>
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-5">
-        <div ng-show="openFdaLabel || drugLabel ">
-            <h3 style="text-align: center;"> Drug Information</h3>
+        <div ng-show="labelNotFound">
+            <h3 style="text-align: center;">{{labelNotFound}}</h3>
+        </div>
+        <div ng-show="!labelNotFound && (openFdaLabel || drugLabel)">
+            <h3 style="text-align: center;"> Drug Labeling Information</h3>
         <div ng-show="openFdaLabel">
             <h4>Open FDA Drug Information</h4>
             <dl class="dl-horizontal" ng-repeat="(key, val) in openFdaLabel" >

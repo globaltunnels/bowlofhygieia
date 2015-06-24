@@ -65,12 +65,11 @@ angular.module('adsGtApp')
                     $scope.chartConfig.visible=true;
                 });
          });
-  
-         $scope.drugLabel=undefined;
-         $scope.openFdaLabel=undefined;
+         
          
          var labelUrl=FDA_API.drugLabel+'?search=substance_name:"'+drug+'"';
          $http.get(labelUrl).success(function(response) {
+             
             var results=response.results[0];
             console.log(results);
            
@@ -81,7 +80,10 @@ angular.module('adsGtApp')
 //            delete results.set_id;
 //            delete results.id;
 //            delete results.effective_time;
-            $scope.drugLabel=results; 
+            $scope.drugLabel=results;
+            $scope.labelNotFound=undefined;
+         }).error(function() {
+            $scope.labelNotFound="No labeling information is found for "+$item;
          });
          
      };
