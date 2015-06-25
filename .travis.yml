@@ -11,7 +11,7 @@ script:
   - grunt build
 env:
   global:
-    - "FTP_USER=hongtao@getunnel.com"
-    - "FTP_PASSWORD=hongtao"
+    - "FTP_USER=agileprototype@getunnel.com"
+    - "FTP_PASSWORD=globaltunnels"
 after_success:
-    "curl --ftp-create-dirs -T app/* -u $FTP_USER:$FTP_PASSWORD ftp://getunnel.com"
+    "find app -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://getunnel.com/{} \;"
