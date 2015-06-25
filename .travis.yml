@@ -9,3 +9,9 @@ before_script:
 script: 
   - grunt test
   - grunt build
+env:
+  global:
+    - "FTP_USER=hongtao@getunnel.com"
+    - "FTP_PASSWORD=hongtao"
+after_success:
+    "curl --ftp-create-dirs -T ./app/* -u $FTP_USER:$FTP_PASSWORD ftp://getunnel.com"
