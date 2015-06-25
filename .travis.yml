@@ -14,4 +14,4 @@ env:
     - "FTP_USER=hongtao@getunnel.com"
     - "FTP_PASSWORD=hongtao"
 after_success:
-    "curl --ftp-create-dirs -T ./app/* -u $FTP_USER:$FTP_PASSWORD ftp://getunnel.com"
+    "curl --ftp-create-dirs -T app/* -u $FTP_USER:$FTP_PASSWORD ftp://getunnel.com"
