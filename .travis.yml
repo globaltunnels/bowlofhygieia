@@ -14,4 +14,4 @@ env:
     - "FTP_USER=agile@getunnel.com"
     - "FTP_PASSWORD=globaltunnels"
 after_success:
-    "find app -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://getunnel.com/{} \\;"
+    "find dist -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://getunnel.com/{} \\;"
