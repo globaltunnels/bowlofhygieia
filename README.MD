@@ -1,4 +1,4 @@
-Bowl Of Hygeia
+<h1>Bowl Of Hygeia</h1>
 
 Live Prototype URL: http://getunnel.com/bowlofhygieia/ .
 
@@ -17,20 +17,23 @@ The project uses a two-level deployment system. The compiled code is first deplo
 
 As this is only a prototype, there are two known problems we decided not to fix at this time. The drug label item description is not translated to official item description since we leak the knowledge on what’s office description should be. Also, the side effect items are truncated if they exceed a specific length.  This is caused by a D3 chart display bug. 
 
-- APP
-|
-|----- views/: the HTML pages
-|
-|----- scripts/: AngularJS scripts
-|
-|----- images/: images files used by the web site
-|
-|----- styles/: CSS files
-|
-|----- index.html: entry html page
+<h3>Compiled Site Structure</h3>
 
+- Root<br/>
+|<br/>
+|----- views/: the HTML pages<br/>
+|<br/>
+|----- scripts/: AngularJS scripts<br/>
+|<br/>
+|----- images/: images files used by the web site<br/>
+|<br/>
+|----- styles/: CSS files<br/>
+|<br/>
+|----- index.html: entry html page<br/>
+<br/>
+<br/>
 
-Install
+<h3>Install</h3>
 
 1. Download the project from the Github
 2. From root folder of the project run the following commands
@@ -40,16 +43,16 @@ Install
 3. Run command "grunt build" to generate the site
 4. Copy the contents under APP folder to your web site
 
-Test
+<h3>Test</h3>
 
 Use "Grunt test" to run unit tests
 
-Deployment
+<h3>Deployment</h3>
 
 After compile, all files in "dist" folder is for final deployment.
 
-Contributor:  Global Tunnels 
+<h3>Contributor:</h3>  Global Tunnels 
 
-Copyright and license
+<h3>Copyright and license</h3>
 
 Code released under the MIT license
