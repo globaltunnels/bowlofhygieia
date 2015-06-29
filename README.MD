@@ -1,4 +1,4 @@
-Bowl Of Hygieia
+<h1>Bowl Of Hygieia</h1>
 
 This prototype displays common drug information for a patient. The user can type a drug name and click search to find FDA drug labelling information and side effect. The site will return the detail information of this drug from live FDA FEARS system.   If the result is found,  the site will display all side effect based in different serious level.  If any symptom is matched and found, the patient is able to submit his/her report from MedWatch.
 
@@ -6,7 +6,7 @@ What's included
 
 The site is an one-page web application based on AngularJS. The site composed of
 
-- APP
+- APP<br/>
 |
 |----- views/: the HTML pages
 |
