@@ -1,4 +1,4 @@
-<h1>Bowl Of Hygeia</h1>
+<h1>Bowl Of Hygieia</h1>
 
 Live Prototype URL: http://getunnel.com/bowlofhygieia/ .
 
